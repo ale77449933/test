@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<script src="js/vue.js"></script>
+</head>
+<body class="" style="background:black; font-size:20px">
+
+	<div class="bg-success">
+		<label>
+			<input type="radio" v-model="PreguntasF.preguntanro" value="0" class="flat-blue"> 0
+		  </label> &nbsp;&nbsp;		
+		  <label>
+			<input type="radio" v-model="PreguntasF.preguntanro" value="1" class="flat-blue"> 1
+		  </label>&nbsp;&nbsp;
+	</div>
+	
+	<div class="text-center">
+		<a href="page2.html" class="btn btn-success">Page 2</a>
+		<a href="page3.html" class="btn btn-success">Page 3</a>
+		<h1 class="text-danger text-center" style="font-size:60px;">hello wold!</h1>
+	</div>
+	
+	<div id="app" class="text-danger text-center">
+		<div v-if="name == 'male'">
+			<h1>{{name}} es valido </h1>
+		</div>
+
+		<div>
+			<h2 class="h1">Are you male or fimel?</h2>
+			<h2 v-show="gender">{{ gender == 'male' ? 'Bienvenido' : 'Bienvenida'}} </h2>
+			<input type="text" name="" v-model="gender">
+		</div>
+
+		<ol class="breadcrumb">
+			<li><a href="/"><i class="fa fa-dashboard"></i> Inicio</a></li>
+			<li class="active">Autoevaluación Facilitadores</li>
+		  </ol>
+
+
+
+		
+		  <div class="box box-primary">
+			<div class="box-header with-border">
+			  <h3 class="box-title">Listado de Colegios</h3>
+			  <div class="box-tools pull-right">
+				<button type="button" class="btn btn-success pull-right"">
+				  <i class="fa fa-plus"> Nuevo</i>
+				</button>
+				<!--<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+				  <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>-->
+			  </div>
+			</div>
+	
+			<div class="box-body">
+			  <div class="row">
+				<div class="col-xs-12 col-md-4 col-lg-4">
+				  <div class="form-group">
+					<label for="criterio"></label>
+					<select class="form-control select2" style="width: 100%;">
+					  <option value="">Seleccione Busqueda</option>
+					  <option value="colegio">Colegio</option>
+					  <option value="comuna">Comuna</option>
+					</select>
+	
+				  </div>
+				</div>
+				
+		  </div>
+		  
+
+
+
+		<div class="bg-dark">
+			<h2>Insert your Gender</h2>
+			<label for="male">male</label>
+			<input type="radio" v-model="gender" value="male">
+			<br>	
+			<label for="fimel" >fimel</label>
+			<input type="radio" v-model="gender" value="fimel">
+			<br>
+			<button class="" @click="showmsm">Has tus letras gigantes</button>
+			<br>
+
+
+			<form action="">
+				<label for="">crea tu usario</label>
+				<br>
+				<input type="text" v-model="newUser">
+				<button @click.prevent="createUser" type="submit">nuevo</button>
+			</form>
+
+
+
+
+			
+			<ul v-for="name of names">
+				<li>{{names}} eres Bienvenido</li>
+			</ul>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+	<script>
+	new Vue({
+		el:'#app',
+		data:{
+			name:'julio',
+			gender:'',
+			newUser:''
+		},
+		methods:{
+			showmsm(){
+				alert('esta en funcion');
+			},
+			createUser(){
+				this.name.push({
+					name : this.newUser
+				})
+			}
+		},
+	})
+	</script>
+	<script src="js/bootstrap.js"></script>
+</body>
+</html>
